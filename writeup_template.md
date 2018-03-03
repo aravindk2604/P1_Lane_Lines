@@ -36,7 +36,9 @@ Why pre-processing of the Image?
 These images are from a camera that is on the dashboard of the vehicle. This is more or less what every camera will see and it will be exposed to different lighting conditions and physical perturbances. By following the image pre-processing techniques, we are making it easy for the algorithm, by removing noise and other abnormalities to an extent. Thus the algorithm can run efficiently on a number of images consecutively, which is a video.
 
 The sample image looks like this after applying grayscale filtering.
+
 ![][image2]
+
 Grayscale helps to work easily with black and white colors on the road which are the two extremes in color scale. It also works fairly well with the yellow line.
 
 Next, a gaussian smoothing is applied to eliminate image noise. I tried different kernel sizes and understood that the other parameters later in the pipeline also gets affected by this kernel size. 
