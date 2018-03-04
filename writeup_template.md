@@ -32,7 +32,7 @@ The project has a template that leads one to achieve this goal as a step-by-step
 - Apply Probabilistic Hough Transform
 - Overlay continuous lines on the original image
 
-Why pre-processing of the Image?
+Why pre-processing of the Image?  
 These images are from a camera that is on the dashboard of the vehicle. This is more or less what every camera will see and it will be exposed to different lighting conditions and physical perturbances. By following the image pre-processing techniques, we are making it easy for the algorithm, by removing noise and other abnormalities to an extent. Thus the algorithm can run efficiently on a number of images consecutively, which is a video.
 
 The sample image looks like this after applying grayscale filtering.
