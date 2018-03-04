@@ -15,7 +15,7 @@ This first project of Udacity's SDCND is to recognize lane-lines on a freeway in
 
 #### Code
 
-You can checkout the project code using this [jupyter notebook](../P1.ipynb)
+You can checkout the project code using this [jupyter notebook](./P1.ipynb)
 
-A brief report of the project can be found here: [Writeup_report](../writeup_report.md)
+A brief report of the project can be found here: [Writeup_report](./writeup_report.md)
 
