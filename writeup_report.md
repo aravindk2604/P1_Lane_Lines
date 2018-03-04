@@ -58,13 +58,13 @@ I modified it and named it draw_lines_extrapolated().
 
 #### Decide based on Slope value
 The idea is to categorize the edges obtained into two sides - right and left lines. The slope of these two lines are different and a good deciding factor. The slope is negative for the left lane line and positive for the right.
-The slope and the intercept for each line detected by the hough transform is calculated using the **np.polyfit()** function. 
+The slope and the intercept for each line detected by the hough transform is calculated using the `np.polyfit()` function. 
 
 #### Calculate x1 and x2 points
-The x1, x2 points for both left and right lane lines are calculated based on the simple straight line equation _y = mx + c_. They are stored in a list and later a mean is calculated using **np.nanmean()**. The y1, y2 points are nothing but the two limits of the polygon mask that we used earlier in the image processing pipeline. Finally, there are four points - _(x1 , y1), (x2, y2)_ for each lane line and in total eight points to draw two extrapolated lines for every image. 
+The x1, x2 points for both left and right lane lines are calculated based on the simple straight line equation _y = mx + c_. They are stored in a list and later a mean is calculated using `np.nanmean()`. The y1, y2 points are nothing but the two limits of the polygon mask that we used earlier in the image processing pipeline. Finally, there are four points - _(x1 , y1), (x2, y2)_ for each lane line and in total eight points to draw two extrapolated lines for every image. 
 
 #### Draw the lines
-I went ahead with the **cv2.line()** function to draw the final extrapolated right and left line. This worked perfectly for every image that I tested. But it had some glitches when I tested it on the video. 
+I went ahead with the `cv2.line()` function to draw the final extrapolated right and left line. This worked perfectly for every image that I tested. But it had some glitches when I tested it on the video. 
 
 The final image that confirms the image processing pipeline.
 
@@ -73,12 +73,12 @@ The final image that confirms the image processing pipeline.
 #### Change parameters for the video processing
 The parameters that define the probabilistic hough transform for a single image is different from that for a video.
 
-For 1 image: **houghTransform(roi_img, rho=2, theta=(np.pi/180), threshold=18, min_line_len=50, max_line_gap=4)**
+For 1 image: `houghTransform(roi_img, rho=2, theta=(np.pi/180), threshold=18, min_line_len=50, max_line_gap=4)`
 
 For the video, the above parameters did not work and the extrapolated lines that were overlaying on the video were quite shaky and not consistent. Even after taking a mean of all the x points to draw the line this issue persisted.
 I tried various values and then obtained the following.
 
-For the video: **houghTransform(roi_img, rho=2, theta=(np.pi/180), threshold=55, min_line_len=40, max_line_gap=100)**
+For the video: `houghTransform(roi_img, rho=2, theta=(np.pi/180), threshold=55, min_line_len=40, max_line_gap=100)`
 
 The __threshold, min_line_len and max_line_gap__ parameters are now different. I obtained these values after a lot of trial and error and it resulted in a stable and consistent overlay of the extrapolated lane lines.
 
