@@ -1,0 +1,5 @@
+name: proj1_environment
+channels:
+  - defaults
+prefix: /home/ak/anaconda3/envs/proj1_environment
+
