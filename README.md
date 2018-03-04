@@ -3,7 +3,7 @@
 ## Overview
 This first project of Udacity's SDCND is to recognize lane-lines on a freeway in a video and overlay them with a continuous (red or any preferred color) line using computer vision techniques. The computer vision techniques were applied by using the Open Computer Vision (OpenCV) library. The project was written in Python.  
 
-![Lanes lines detected on the road][./writeup_images/final_lane_marking.png]
+![Lanes lines detected on the road](./writeup_images/final_lane_marking.png)
 
 
 #### My conda environment file
